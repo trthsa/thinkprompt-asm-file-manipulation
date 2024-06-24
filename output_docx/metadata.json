@@ -1,0 +1,303 @@
+{
+    "paragraphs": [
+        {
+            "para_num": 1,
+            "text": "SCHEDULE OF THE MEETING",
+            "runs": [
+                {
+                    "text": "SCHEDULE OF THE MEETING",
+                    "bold": true,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 2,
+            "text": "\u00a0",
+            "runs": [
+                {
+                    "text": "\u00a0",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 3,
+            "text": "Meeting date: October 28th, 2023",
+            "runs": [
+                {
+                    "text": "Meeting date:",
+                    "bold": true,
+                    "italic": true,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "text": " October 28th, 2023",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 4,
+            "text": "Estimated time: from 9:45 a.m. - 12:18 p.m.",
+            "runs": [
+                {
+                    "text": "Estimated time:",
+                    "bold": true,
+                    "italic": true,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "text": " from 9:45 a.m. - 12:18 p.m.",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 5,
+            "text": "Location: Classroom D202 (Area D) - Danang University of Economics",
+            "runs": [
+                {
+                    "text": "Location:",
+                    "bold": true,
+                    "italic": true,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "text": " Classroom D202 (Area D) - Danang University of Economics",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 6,
+            "text": "Participants:",
+            "runs": [
+                {
+                    "text": "Participants:",
+                    "bold": true,
+                    "italic": true,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 7,
+            "text": "Reporting groups include: Cin, Appendicitis, Mabu, Blue Ribbon.",
+            "runs": [
+                {
+                    "text": "Reporting groups include: Cin, Appendicitis, Mabu, Blue Ribbon.",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 8,
+            "text": "Team leader - ABC",
+            "runs": [
+                {
+                    "text": "Team leader - ABC",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 9,
+            "text": "Receptionist Group - SevenTeen\u00a0",
+            "runs": [
+                {
+                    "text": "Receptionist Group - SevenTeen\u00a0",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 10,
+            "text": "Logistics Staff - MB",
+            "runs": [
+                {
+                    "text": "Logistics Staff - MB",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 11,
+            "text": "\u00a0",
+            "runs": [
+                {
+                    "text": "\u00a0",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 12,
+            "text": "\u00a0",
+            "runs": [
+                {
+                    "text": "\u00a0",
+                    "bold": null,
+                    "italic": null,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 13,
+            "text": "Hope the meeting goes well!",
+            "runs": [
+                {
+                    "text": "Hope the meeting goes well!",
+                    "bold": true,
+                    "italic": true,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 14,
+            "text": "",
+            "runs": []
+        },
+        {
+            "para_num": 15,
+            "text": "\u00a0",
+            "runs": [
+                {
+                    "text": "\u00a0",
+                    "bold": true,
+                    "italic": true,
+                    "font_name": "Times New Roman",
+                    "font_size": 13.0,
+                    "color": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ]
+        },
+        {
+            "para_num": 16,
+            "text": "",
+            "runs": []
+        }
+    ],
+    "images": []
+}
