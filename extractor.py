@@ -65,14 +65,14 @@ class FileManipulator:
         
         with open(os.path.join(output_folder, "metadata.json"), "w") as meta_file:
             json.dump(metadata, meta_file, indent=4)
- 
     def extract_text_images_from_docx(self, docx_path, output_folder):
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
-        
+
         doc = Document(docx_path)
-        metadata = {"paragraphs": [], "images": []}
-        
+        metadata = {"paragraphs": [], "images": [], "tables": []}
+
+        # Paragraph extraction
         for para_num, para in enumerate(doc.paragraphs):
             para_data = {
                 "para_num": para_num + 1,
@@ -89,11 +89,9 @@ class FileManipulator:
                     "color": run.font.color.rgb if run.font.color else None
                 }
                 para_data["runs"].append(run_data)
-
             metadata["paragraphs"].append(para_data)
-            with open(os.path.join(output_folder, f"paragraph_{para_num + 1}.txt"), "w") as text_file:
-                text_file.write(para.text)
-        
+
+        # Image extraction
         for rel in doc.part.rels.values():
             if "image" in rel.target_ref:
                 img = rel.target_part.blob
@@ -105,45 +103,88 @@ class FileManipulator:
                     "path": img_path,
                     "ext": img_ext
                 })
-        
+
+        # Table extraction with text styles
+        for table_num, table in enumerate(doc.tables):
+            table_data = {"table_num": table_num + 1, "rows": []}
+            for row_num, row in enumerate(table.rows):
+                row_data = {"row_num": row_num + 1, "cells": []}
+                for cell in row.cells:
+                    cell_data = {"paragraphs": []}
+                    for para in cell.paragraphs:
+                        para_data = {
+                            "text": para.text,
+                            "runs": []
+                        }
+                        for run in para.runs:
+                            run_data = {
+                                "text": run.text,
+                                "bold": run.bold,
+                                "italic": run.italic,
+                                "font_name": run.font.name,
+                                "font_size": run.font.size.pt if run.font.size else None,
+                                "color": run.font.color.rgb if run.font.color else None
+                            }
+                            para_data["runs"].append(run_data)
+                        cell_data["paragraphs"].append(para_data)
+                    row_data["cells"].append(cell_data)
+                table_data["rows"].append(row_data)
+            metadata["tables"].append(table_data)
+
+        # Save metadata
         with open(os.path.join(output_folder, "metadata.json"), "w") as meta_file:
             json.dump(metadata, meta_file, indent=4)
-
     def convert_text_to_uppercase(self, pdf_path, output_path, type):
         if type == "pdf":
             self.recreate_pdf("output_pdf", output_path, lambda text: text.upper())
         elif type == "docx":
             self.recreate_docx("output_docx", output_path, lambda text: text.upper())
     
-    def recreate_docx(self, output_folder, output_path, content_processor = None):
+    def recreate_docx(self, output_folder, output_path, content_processor=None):
         with open(os.path.join(output_folder, "metadata.json"), "r") as meta_file:
             metadata = json.load(meta_file)
-        
+
         doc = Document()
-        
+
+        # Paragraphs recreation
         for para_meta in metadata["paragraphs"]:
             para = doc.add_paragraph()
             for run_meta in para_meta["runs"]:
-                if content_processor:
-                    run = para.add_run(content_processor(run_meta["text"]))
-                else:
-                    run = para.add_run(run_meta["text"])
-                run.bold = run_meta["bold"] if run_meta["bold"] else False
-                run.italic = run_meta["italic"] if run_meta["italic"] else False
-                if run_meta["font_size"]:
+                text = content_processor(run_meta["text"]) if content_processor else run_meta["text"]
+                run = para.add_run(text)
+                run.bold = run_meta.get("bold", False)
+                run.italic = run_meta.get("italic", False)
+                if run_meta.get("font_size"):
                     run.font.size = Pt(run_meta["font_size"])
-                if run_meta["color"]:
-                    color_int = run_meta["color"]
-                    r = color_int[0]
-                    g = color_int[1]
-                    b = color_int[2]
-                    run.font.color.rgb = RGBColor(r, g, b)
-                run.font.name = run_meta["font_name"]
-        
+                if run_meta.get("color"):
+                    run.font.color.rgb = RGBColor(*run_meta["color"])
+                run.font.name = run_meta.get("font_name")
+
+        # Images recreation
         for img_meta in metadata["images"]:
             with open(img_meta["path"], "rb") as img_file:
                 doc.add_picture(img_file, width=Pt(300))
-        
+
+        # Tables recreation
+        for table_meta in metadata["tables"]:
+            table = doc.add_table(rows=0, cols=len(table_meta["rows"][0]["cells"]) if table_meta["rows"] else 0)
+            for row_meta in table_meta["rows"]:
+                row = table.add_row()
+                for cell_meta, cell in zip(row_meta["cells"], row.cells):
+                    cell._element.clear_content()  # Clear existing cell content
+                    for para_meta in cell_meta["paragraphs"]:
+                        para = cell.add_paragraph()
+                        for run_meta in para_meta["runs"]:
+                            run = para.add_run(run_meta["text"])
+                            run.bold = run_meta.get("bold", False)
+                            run.italic = run_meta.get("italic", False)
+                            if "font_name" in run_meta:
+                                run.font.name = run_meta["font_name"]
+                            if "font_size" in run_meta:
+                                run.font.size = Pt(run_meta["font_size"])
+                            if "color" in run_meta:
+                                run.font.color.rgb = RGBColor(*run_meta["color"])
+
         doc.save(output_path)
 
     def recreate_pdf(self, output_folder, output_path, content_processor = None):

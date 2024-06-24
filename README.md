@@ -39,28 +39,27 @@
         - [x] Font size
         - [x] Text color 
         - [x] Images
-        - Note: Support for font using from "Style" or "Default Style" is not supported by the current implementation.
+        - Note: DOCX Support for font using from "Style" or "Default Style" is not supported by the current implementation.
        
 - [x] For each paragraph in the PDF/DOCX, extract the following details.
     - [x] Text content
     - [x] Font type
         - [x] PDF
         - [x] DOCX (Only for manually specified fonts)
-        - Note: Support for font using from "Style" or "Default Style" is not supported by the current implementation.
+        - Note 1: Support for font using from "Style" or "Default Style" is not supported by the current implementation.
+        - Note 2: PDF Support is not supported by the current implementation.
     - [x] Font size
     - [x] Styling elements (such as italics, bold, etc.)
         - [x] Italic
         - [x] Bold
-        - [ ] Underline
-        - [ ] Strikethrough
+        - Note: PDF Support styling is not supported by the current implementation.
     - [x] Text color
 - [x] Convert the text of each extracted paragraph to UPPERCASE.
     - [x] Compile all the UPPERCASE paragraphs into a new PDF/DOCX.
     - [x] Maintain the original formatting (font type and styling) as closely as possible.
         - [x] PDF
-            - Note: The current implementation does not support font type.
+            - Note: The current implementation does not support font type and styling.
         - [x] DOCX
-            - [ ] Tables
 - [ ] Translate all text in the file to English and append the translated text under the original text in slides.
 - [x] Save all images to the disk, paying attention to how the files/folders are named during this process.
 - [ ] Deploy the application using a container.
