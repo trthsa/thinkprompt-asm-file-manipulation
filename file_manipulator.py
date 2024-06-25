@@ -321,4 +321,4 @@ if __name__ == "__main__":
     manipulator.recreate_pdf("results/pdf_mock_file_output", "recreated_pdf.pdf")
 
     # Translate all text in the file to Vietnamese and append the translated text under the original text in slides.
-    manipulator.translate_text_in_pptx("mock_samples/Networking.pptx", "results/translated_pptx.pptx",from_lang='en',to_lang='vi')
+    # manipulator.translate_text_in_pptx("mock_samples/Networking.pptx", "results/translated_pptx.pptx",from_lang='en',to_lang='vi')
