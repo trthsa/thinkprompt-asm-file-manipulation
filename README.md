@@ -32,6 +32,10 @@ Click the button below to start a new ready-to-go development environment:
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/trthsa/thinkprompt-asm-file-manipulation)
 
+## Requirements
+- For local runs Python 3.12+ or Docker v24+ is required for running the application in a container.
+- See the requirements.txt file for the required packages.
+
 ## Installation
 1. Clone the repository
 2. Install the required packages using pip:
@@ -56,9 +60,7 @@ docker run -p 5000:5000 file-manipulator
 ```
 4. The output files will be saved in the `results` folder.
 
-## Requirements
-- Python 3.12+ or Docker v24+
-- See the requirements.txt file for the required packages.
+
 ## Guide
 - The server.py file contains the main code for the application.
 - The `results` folder contains the output files.
@@ -66,8 +68,11 @@ docker run -p 5000:5000 file-manipulator
 -  [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/12812349-6fd3ee6d-7481-406c-b8b5-3f06d33c0bfe?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D12812349-6fd3ee6d-7481-406c-b8b5-3f06d33c0bfe%26entityType%3Dcollection%26workspaceId%3D08e923f8-b871-4725-a244-0f21f4d14775#?env%5BFM-API-ENV%5D=W3sia2V5IjoiaG9zdCIsInZhbHVlIjoiaHR0cDovLzEyNy4wLjAuMTo1MDAwIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6ImRlZmF1bHQifV0=) for more details on the API endpoints and pre-crafted examples. or import `FileManipulator API.postman_collection.json` to your local Postman.
 ## File Manipulation Task
 ## Todo List
+> [!NOTE]
+> The following tasks are based on the requirements provided in the assignment. The tasks are divided into sub-tasks to make it easier to track the progress of the project. The tasks are also marked as completed if the implementation is not possible due to limitations (with a note explaining the limitation)
 
-> Note: The following tasks are based on the requirements provided in the assignment. The tasks are divided into sub-tasks to make it easier to track the progress of the project. The tasks are also marked as completed if the implementation is not possible due to limitations (with a note explaining the limitation)
+> [!IMPORTANT]
+> The project doesn't support any security features like authentication, authorization, or encryption. The project is designed to be a simple file manipulation tool. The project is not designed to be used in a production environment. Please use the project with caution.
 
 - [x] Write a script to extract all text and images from the provided PDF/DOCX.
     - [x] PDF (PyMuPDF) - extracted to folder with metadata (JSON format)
