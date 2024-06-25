@@ -60,7 +60,7 @@
         - [x] PDF
             - Note: The current implementation does not support font type and styling.
         - [x] DOCX
-- [ ] Translate all text in the file to English and append the translated text under the original text in slides.
+- [x] Translate all text in the file to English and append the translated text under the original text in slides.
 - [x] Save all images to the disk, paying attention to how the files/folders are named during this process.
 - [ ] Deploy the application using a container.
 - [ ] Submit code via Git (Gitlab or Github is highly recommended).

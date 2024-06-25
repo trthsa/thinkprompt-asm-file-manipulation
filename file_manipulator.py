@@ -3,28 +3,71 @@ import json
 from deep_translator import GoogleTranslator
 from docx import Document
 from docx.shared import Pt, RGBColor
-from io import BytesIO
-import fitz  
+import fitz  # PyMuPDF
 from pptx import Presentation
 
 class FileManipulator:
     def __init__(self):
         pass
 
+    def _ensure_folder_exists(self, folder_path):
+        """
+        Ensure the given folder exists, create it if it does not.
+
+        :param folder_path: Path to the folder.
+        """
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+    def _save_metadata(self, metadata, output_folder):
+        """
+        Save metadata to a JSON file in the specified folder.
+
+        :param metadata: Metadata to be saved.
+        :param output_folder: Path to the folder where metadata will be saved.
+        """
+        with open(os.path.join(output_folder, "metadata.json"), "w") as meta_file:
+            json.dump(metadata, meta_file, indent=4)
+
+    def _load_metadata(self, output_folder):
+        """
+        Load metadata from a JSON file in the specified folder.
+
+        :param output_folder: Path to the folder containing the metadata.json file.
+        :return: Loaded metadata.
+        """
+        with open(os.path.join(output_folder, "metadata.json"), "r") as meta_file:
+            return json.load(meta_file)
+
+    def _process_text(self, text, processor=None):
+        """
+        Process the given text using the specified processor function.
+
+        :param text: Text to be processed.
+        :param processor: Optional function to process the text.
+        :return: Processed text.
+        """
+        return processor(text) if processor else text
+
     def extract_text_images_from_pdf(self, pdf_path, output_folder):
-        if not os.path.exists(output_folder):
-            os.makedirs(output_folder)
-        
+        """
+        Extract text and images from a PDF and save metadata to a specified folder.
+
+        :param pdf_path: Path to the input PDF file.
+        :param output_folder: Path to the folder where output metadata and images will be saved.
+        """
+        self._ensure_folder_exists(output_folder)
+
         doc = fitz.open(pdf_path)
         metadata = {"pages": []}
-        
+
         for page_num in range(len(doc)):
             page = doc.load_page(page_num)
-            
+
             # Extract text with styling information
             page_blocks = page.get_text("dict")["blocks"]
             text_metadata = []
-            
+
             for block in page_blocks:
                 if block["type"] == 0:  # Text block
                     for line in block["lines"]:
@@ -36,13 +79,12 @@ class FileManipulator:
                                 "font_color": span["color"],
                                 "font_name": span["font"],
                                 "bbox": bbox,
-                                "bold": span["flags"] & 1 
-                                  != 0 or ("bold" in span["font"].lower()) ,  
+                                "bold": span["flags"] & 1 != 0 or ("bold" in span["font"].lower()),  
                                 "italic": span["flags"] & 2 != 0 or ("italic" in span["font"].lower()), 
                             }
                             text_metadata.append(text_meta)
-            
-            # Extract images (similar to your current implementation)
+
+            # Extract images
             images = page.get_images(full=True)
             image_metadata = []
             for img_index, img in enumerate(images):
@@ -58,19 +100,23 @@ class FileManipulator:
                     "path": image_path,
                     "ext": image_ext
                 })
-            
+
             metadata["pages"].append({
                 "page_num": page_num + 1,
                 "text_instances": text_metadata,
                 "images": image_metadata
             })
-        
-        with open(os.path.join(output_folder, "metadata.json"), "w") as meta_file:
-            json.dump(metadata, meta_file, indent=4)
+
+        self._save_metadata(metadata, output_folder)
 
     def extract_text_images_from_docx(self, docx_path, output_folder):
-        if not os.path.exists(output_folder):
-            os.makedirs(output_folder)
+        """
+        Extract text and images from a DOCX file and save metadata to a specified folder.
+
+        :param docx_path: Path to the input DOCX file.
+        :param output_folder: Path to the folder where output metadata and images will be saved.
+        """
+        self._ensure_folder_exists(output_folder)
 
         doc = Document(docx_path)
         metadata = {"paragraphs": [], "images": [], "tables": []}
@@ -134,19 +180,30 @@ class FileManipulator:
                 table_data["rows"].append(row_data)
             metadata["tables"].append(table_data)
 
-        # Save metadata
-        with open(os.path.join(output_folder, "metadata.json"), "w") as meta_file:
-            json.dump(metadata, meta_file, indent=4)  
+        self._save_metadata(metadata, output_folder)
 
-    def convert_text_to_uppercase(self, pdf_path, output_path, type):
-        if type == "pdf":
-            self.recreate_pdf("output_pdf", output_path, lambda text: text.upper())
-        elif type == "docx":
-            self.recreate_docx("output_docx", output_path, lambda text: text.upper())
-    
+    def convert_text_to_uppercase(self, file_path, output_path, file_type):
+        """
+        Convert all text in a file (PDF or DOCX) to uppercase and save the modified file.
+
+        :param file_path: Path to the input file.
+        :param output_path: Path to save the modified file.
+        :param file_type: Type of the input file ('pdf' or 'docx').
+        """
+        if file_type == "pdf":
+            self.recreate_pdf(file_path, output_path, lambda text: text.upper())
+        elif file_type == "docx":
+            self.recreate_docx(file_path, output_path, lambda text: text.upper())
+
     def recreate_docx(self, output_folder, output_path, content_processor=None):
-        with open(os.path.join(output_folder, "metadata.json"), "r") as meta_file:
-            metadata = json.load(meta_file)
+        """
+        Recreate a DOCX file from extracted metadata and apply a content processor function to the text.
+
+        :param output_folder: Path to the folder containing the metadata.json file.
+        :param output_path: Path to save the recreated DOCX file.
+        :param content_processor: Optional function to process the text content.
+        """
+        metadata = self._load_metadata(output_folder)
 
         doc = Document()
 
@@ -154,7 +211,7 @@ class FileManipulator:
         for para_meta in metadata["paragraphs"]:
             para = doc.add_paragraph()
             for run_meta in para_meta["runs"]:
-                text = content_processor(run_meta["text"]) if content_processor else run_meta["text"]
+                text = self._process_text(run_meta["text"], content_processor)
                 run = para.add_run(text)
                 run.bold = run_meta.get("bold", False)
                 run.italic = run_meta.get("italic", False)
@@ -179,27 +236,33 @@ class FileManipulator:
                     for para_meta in cell_meta["paragraphs"]:
                         para = cell.add_paragraph()
                         for run_meta in para_meta["runs"]:
-                            run = para.add_run(run_meta["text"])
+                            text = self._process_text(run_meta["text"], content_processor)
+                            run = para.add_run(text)
                             run.bold = run_meta.get("bold", False)
                             run.italic = run_meta.get("italic", False)
-                            if "font_name" in run_meta:
-                                run.font.name = run_meta["font_name"]
-                            if "font_size" in run_meta:
+                            if run_meta.get("font_size"):
                                 run.font.size = Pt(run_meta["font_size"])
-                            if "color" in run_meta:
+                            if run_meta.get("color"):
                                 run.font.color.rgb = RGBColor(*run_meta["color"])
+                            run.font.name = run_meta.get("font_name")
 
         doc.save(output_path)
 
-    def recreate_pdf(self, output_folder, output_path, content_processor = None):
-        with open(os.path.join(output_folder, "metadata.json"), "r") as meta_file:
-            metadata = json.load(meta_file)
-        
+    def recreate_pdf(self, output_folder, output_path, content_processor=None):
+        """
+        Recreate a PDF file from extracted metadata and apply a content processor function to the text.
+
+        :param output_folder: Path to the folder containing the metadata.json file.
+        :param output_path: Path to save the recreated PDF file.
+        :param content_processor: Optional function to process the text content.
+        """
+        metadata = self._load_metadata(output_folder)
+
         doc = fitz.open()
-        
+
         for page_meta in metadata["pages"]:
             page = doc.new_page()
-            
+
             for text_meta in page_meta["text_instances"]:
                 bbox = fitz.Rect(text_meta["bbox"])
                 r = (text_meta["font_color"] >> 16) & 0xff
@@ -207,21 +270,20 @@ class FileManipulator:
                 b = text_meta["font_color"] & 0xff
                 color = [r/255, g/255, b/255]
                 page.insert_text((bbox.x0, bbox.y0),
-                                 content_processor(text_meta["text"]) if content_processor else text_meta["text"]
-                                 , fontsize=text_meta["font_size"], color=color)
+                                 self._process_text(text_meta["text"], content_processor),
+                                 fontsize=text_meta["font_size"], color=color)
             for img_meta in page_meta["images"]:
                 image_rect = fitz.Rect(72, 72 + img_meta["index"] * 200, 300, 400 + img_meta["index"] * 200)
                 page.insert_image(image_rect, filename=img_meta["path"])
-        
+
         doc.save(output_path)
 
-    def change_text_in_pptx(self, input_pptx_path, output_pptx_path):
+    def translate_text_in_pptx(self, input_pptx_path, output_pptx_path,from_lang='en',to_lang='vi'):
         """
-        Change text in a PPTX file.
+        Translate all text in a PPTX file to Vietnamese and append the translated text under the original text.
 
         :param input_pptx_path: Path to the input PPTX file.
         :param output_pptx_path: Path to save the modified PPTX file.
-        :param text_replacements: Dictionary with keys as old text and values as new text.
         """
         prs = Presentation(input_pptx_path)
 
@@ -231,7 +293,8 @@ class FileManipulator:
                     continue
                 for para in shape.text_frame.paragraphs:
                     for run in para.runs:
-                        run.text = run.text + "\n" + GoogleTranslator(source='en', target='vi').translate(run.text) 
+                        translated_text = GoogleTranslator(source=from_lang, target=to_lang).translate(run.text)
+                        run.text = run.text + "\n" + translated_text
 
         prs.save(output_pptx_path)
 
@@ -240,24 +303,22 @@ if __name__ == "__main__":
     manipulator = FileManipulator()
 
     # # Extract text and images from PDF
-    # manipulator.extract_text_images_from_pdf("docx_mock_file.pdf", "output_pdf")
+    manipulator.extract_text_images_from_pdf("mock_samples/pdf_mock_file.pdf", "results/pdf_mock_file_output")
 
     # # Extract text and images from DOCX
-    # manipulator.extract_text_images_from_docx("docx_mock_file.docx", "output_docx")
+    manipulator.extract_text_images_from_docx("mock_samples/docx_mock_file.docx", "results/docx_mock_file_output")
 
     # # Convert text to uppercase and compile into new DOCX
-    # manipulator.convert_text_to_uppercase("docx_mock_file.docx", "uppercase_docx.docx",type="docx")
+    manipulator.convert_text_to_uppercase("results/docx_mock_file_output", "results/uppercase_docx.docx", file_type="docx")
 
     # # Convert text to uppercase and compile into new PDF
-    # manipulator.convert_text_to_uppercase("docx_mock_file.pdf", "uppercase_pdf.pdf", type="pdf")
+    manipulator.convert_text_to_uppercase("results/pdf_mock_file_output", "results/uppercase_pdf.pdf", file_type="pdf")
 
     # # Recreate DOCX from extracted data
-    # manipulator.recreate_docx("output_docx", "recreated_docx.docx")
+    manipulator.recreate_docx("results/docx_mock_file_output", "recreated_docx.docx")
 
     # # Recreate PDF from extracted data
-    # manipulator.recreate_pdf("output_pdf", "recreated_pdf.pdf")
+    manipulator.recreate_pdf("results/pdf_mock_file_output", "recreated_pdf.pdf")
 
-    # Translate all text in the file to English and append the translated text under the original text in slides.
-    input_pptx_path = "Networking.pptx"
-    output_pptx_path = "modified_example.pptx"
-    manipulator.change_text_in_pptx(input_pptx_path, output_pptx_path) 
+    # Translate all text in the file to Vietnamese and append the translated text under the original text in slides.
+    manipulator.translate_text_in_pptx("mock_samples/Networking.pptx", "results/translated_pptx.pptx",from_lang='en',to_lang='vi')
