@@ -286,14 +286,14 @@ class FileManipulator:
         :param output_pptx_path: Path to save the modified PPTX file.
         """
         prs = Presentation(input_pptx_path)
-
+        translator = GoogleTranslator(source=from_lang, target=to_lang)
         for slide in prs.slides:
             for shape in slide.shapes:
                 if not shape.has_text_frame:
                     continue
                 for para in shape.text_frame.paragraphs:
                     for run in para.runs:
-                        translated_text = GoogleTranslator(source=from_lang, target=to_lang).translate(run.text)
+                        translated_text = translator.translate(run.text)
                         run.text = run.text + "\n" + translated_text
 
         prs.save(output_pptx_path)
