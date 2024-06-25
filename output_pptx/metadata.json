@@ -1,0 +1,1819 @@
+{
+    "slides": [
+        {
+            "slide_num": 1,
+            "texts": [
+                {
+                    "text": "Introduction",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Welcome",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Who this course is for?",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Course Outline",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "husseinnasser",
+                    "font_size": 8.25,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": []
+        },
+        {
+            "slide_num": 2,
+            "texts": [
+                {
+                    "text": "Client-Server Architecture",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "A revolution in networking",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": [
+                {
+                    "path": "output_pptx\\slide_2_image_1.png",
+                    "ext": "png"
+                },
+                {
+                    "path": "output_pptx\\slide_2_image_2.png",
+                    "ext": "png"
+                }
+            ]
+        },
+        {
+            "slide_num": 3,
+            "texts": [
+                {
+                    "text": "Client-Server Architecture",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Machines are expensive, applications are complex",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Seperate the application into two components ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Expensive workload can be done on the server",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Clients call servers to perform expensive tasks",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Remote procedure call (RPC) was born",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": [
+                {
+                    "path": "output_pptx\\slide_3_image_1.png",
+                    "ext": "png"
+                }
+            ]
+        },
+        {
+            "slide_num": 4,
+            "texts": [
+                {
+                    "text": "Client-Server Architecture Benefits",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Servers have beefy hardware",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Clients have commodity hardware  ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Clients can still perform lightweight tasks",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Clients no longer require ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "dependencies",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "However, we need a communication model",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": []
+        },
+        {
+            "slide_num": 5,
+            "texts": [
+                {
+                    "text": "OSI Model",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Open Systems Interconnection model",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "husseinnasser",
+                    "font_size": 8.25,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": [
+                {
+                    "path": "output_pptx\\slide_5_image_1.png",
+                    "ext": "png"
+                }
+            ]
+        },
+        {
+            "slide_num": 6,
+            "texts": [
+                {
+                    "text": "Why do we need a communication model?",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Agnostic applications",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Without a standard model, your application must have knowledge of the underlying network medium ",
+                    "font_size": 18.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Imagine if you have to author different version of your apps so that it works on wifi vs ethernet vs LTE vs fiber",
+                    "font_size": 18.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Equipment",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " Management",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Without a standard model, upgrading network equipments becomes difficult",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Decoupled ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Innovation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Innovations",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " can be done in each layer ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "separately",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " without affecting the rest  of the models",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "husseinnasser",
+                    "font_size": 8.25,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": []
+        },
+        {
+            "slide_num": 7,
+            "texts": [
+                {
+                    "text": "What is the OSI Model?",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "7 Layers each describe a specific networking component ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 7 - Application - HTTP/FTP/gRPC",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 6 - Presentation - Encoding, ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Serialization",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 5 - Session - Connection establishment, TLS",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 4 - Transport - UDP/TCP",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 3 - Network - IP",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 2 - Data link - Frames, Mac address Ethernet",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 1 - Physical - Electric signals, fiber or radio waves",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "husseinnasser",
+                    "font_size": 8.25,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": []
+        },
+        {
+            "slide_num": 8,
+            "texts": [
+                {
+                    "text": "The OSI Layers - an Example (Sender)",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Example sending a POST request to an HTTPS webpage",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 7 - Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "POST request with JSON data to HTTPS server  ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 6 - Presentation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Serialize",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " JSON to ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "flat byte",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " strings",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 5 - Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Request to ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "establish",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " TCP connection/TLS ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 4 - Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Sends SYN request target port 443",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 3 - Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " SYN is placed an IP packet(s) and adds the source/dest IPs ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 2 - Data link ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Each packet goes into a single frame and adds the source/dest MAC addresses",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 1 - Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Each frame becomes string of bits which converted into either a radio signal (wifi), electric signal (ethernet), or light (fiber) ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Take it with a grain of salt, ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "it's",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": " not always cut and dry",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "husseinnasser",
+                    "font_size": 8.25,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": []
+        },
+        {
+            "slide_num": 9,
+            "texts": [
+                {
+                    "text": "The OSI Layers - an Example (Receiver)",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Receiver computer receives the POST request the other way around ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 1 - Physical ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Radio, electric or light is received and converted into digital bits",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 2 - Data link ",
+                    "font_size": 18.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "The bits from Layer 1 is assembled into frames",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 3 - Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "The frames from layer 2 are assembled into IP packet. ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 4 - Transport",
+                    "font_size": 18.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "The IP packets from layer 3 are assembled into TCP segments",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Deals with Congestion control/flow control/retransmission in case of TCP",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "If Segment is SYN we don\u2019t need to go further into more layers as we are still processing the connection request",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 5 - Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "The connection session is established or identified",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "We only arrive at this layer when necessary (three way handshake is done)",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 6 - Presentation",
+                    "font_size": 18.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Deserialize flat byte strings back to JSON for the app to consume",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 7 - Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Application understands the JSON POST request and your express json or apache request receive event is triggered",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Take it with a grain of salt, it's not always cut and dry",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "husseinnasser",
+                    "font_size": 8.25,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": []
+        },
+        {
+            "slide_num": 10,
+            "texts": [
+                {
+                    "text": "Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Presentation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Client",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Presentation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Server",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Client sends an HTTPS POST request",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Frame",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Packet",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Segment",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": [
+                {
+                    "path": "output_pptx\\slide_10_image_1.png",
+                    "ext": "png"
+                },
+                {
+                    "path": "output_pptx\\slide_10_image_2.png",
+                    "ext": "png"
+                }
+            ]
+        },
+        {
+            "slide_num": 11,
+            "texts": [
+                {
+                    "text": "Client",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Server",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "DPORT",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "S",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "PORT",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "DIP",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "SIP",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "DMAC",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "SMAC",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "DPORT",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "SPORT",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "DIP",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "SIP",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "DMAC",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "SMAC",
+                    "font_size": 8.0,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": true,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": [
+                {
+                    "path": "output_pptx\\slide_11_image_1.png",
+                    "ext": "png"
+                },
+                {
+                    "path": "output_pptx\\slide_11_image_2.png",
+                    "ext": "png"
+                }
+            ]
+        },
+        {
+            "slide_num": 12,
+            "texts": [
+                {
+                    "text": "Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Presentation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Client",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Presentation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Server",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Across networks",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Switch",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Router",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": [
+                {
+                    "path": "output_pptx\\slide_12_image_1.png",
+                    "ext": "png"
+                },
+                {
+                    "path": "output_pptx\\slide_12_image_2.png",
+                    "ext": "png"
+                },
+                {
+                    "path": "output_pptx\\slide_12_image_3.png",
+                    "ext": "png"
+                }
+            ]
+        },
+        {
+            "slide_num": 13,
+            "texts": [
+                {
+                    "text": "Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Presentation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Client",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Presentation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Backend ",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Server",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Across networks",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 4 Proxy, Firewall",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Layer 7 Load Balancer/CDN",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Data Link",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Physical",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Network",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Application",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Presentation",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Session",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                },
+                {
+                    "text": "Transport",
+                    "font_size": null,
+                    "font_color": null,
+                    "font_name": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null
+                }
+            ],
+            "images": [
+                {
+                    "path": "output_pptx\\slide_13_image_1.png",
+                    "ext": "png"
+                },
+                {
+                    "path": "output_pptx\\slide_13_image_2.png",
+                    "ext": "png"
+                },
+                {
+                    "path": "output_pptx\\slide_13_image_3.png",
+                    "ext": "png"
+                }
+            ]
+        }
+    ]
+}

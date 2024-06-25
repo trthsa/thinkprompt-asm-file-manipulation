@@ -1,9 +1,11 @@
 import os
 import json
+from deep_translator import GoogleTranslator
 from docx import Document
 from docx.shared import Pt, RGBColor
 from io import BytesIO
-import fitz  # PyMuPDF
+import fitz  
+from pptx import Presentation
 
 class FileManipulator:
     def __init__(self):
@@ -65,6 +67,7 @@ class FileManipulator:
         
         with open(os.path.join(output_folder, "metadata.json"), "w") as meta_file:
             json.dump(metadata, meta_file, indent=4)
+
     def extract_text_images_from_docx(self, docx_path, output_folder):
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
@@ -133,7 +136,8 @@ class FileManipulator:
 
         # Save metadata
         with open(os.path.join(output_folder, "metadata.json"), "w") as meta_file:
-            json.dump(metadata, meta_file, indent=4)
+            json.dump(metadata, meta_file, indent=4)  
+
     def convert_text_to_uppercase(self, pdf_path, output_path, type):
         if type == "pdf":
             self.recreate_pdf("output_pdf", output_path, lambda text: text.upper())
@@ -211,24 +215,49 @@ class FileManipulator:
         
         doc.save(output_path)
 
+    def change_text_in_pptx(self, input_pptx_path, output_pptx_path):
+        """
+        Change text in a PPTX file.
+
+        :param input_pptx_path: Path to the input PPTX file.
+        :param output_pptx_path: Path to save the modified PPTX file.
+        :param text_replacements: Dictionary with keys as old text and values as new text.
+        """
+        prs = Presentation(input_pptx_path)
+
+        for slide in prs.slides:
+            for shape in slide.shapes:
+                if not shape.has_text_frame:
+                    continue
+                for para in shape.text_frame.paragraphs:
+                    for run in para.runs:
+                        run.text = run.text + "\n" + GoogleTranslator(source='en', target='vi').translate(run.text) 
+
+        prs.save(output_pptx_path)
+
 
 if __name__ == "__main__":
     manipulator = FileManipulator()
 
-    # Extract text and images from PDF
-    manipulator.extract_text_images_from_pdf("docx_mock_file.pdf", "output_pdf")
+    # # Extract text and images from PDF
+    # manipulator.extract_text_images_from_pdf("docx_mock_file.pdf", "output_pdf")
 
-    # Extract text and images from DOCX
-    manipulator.extract_text_images_from_docx("docx_mock_file.docx", "output_docx")
+    # # Extract text and images from DOCX
+    # manipulator.extract_text_images_from_docx("docx_mock_file.docx", "output_docx")
 
-    # Convert text to uppercase and compile into new DOCX
-    manipulator.convert_text_to_uppercase("docx_mock_file.docx", "uppercase_docx.docx",type="docx")
+    # # Convert text to uppercase and compile into new DOCX
+    # manipulator.convert_text_to_uppercase("docx_mock_file.docx", "uppercase_docx.docx",type="docx")
 
-    # Convert text to uppercase and compile into new PDF
-    manipulator.convert_text_to_uppercase("docx_mock_file.pdf", "uppercase_pdf.pdf", type="pdf")
+    # # Convert text to uppercase and compile into new PDF
+    # manipulator.convert_text_to_uppercase("docx_mock_file.pdf", "uppercase_pdf.pdf", type="pdf")
 
-    # Recreate DOCX from extracted data
-    manipulator.recreate_docx("output_docx", "recreated_docx.docx")
+    # # Recreate DOCX from extracted data
+    # manipulator.recreate_docx("output_docx", "recreated_docx.docx")
 
-    # Recreate PDF from extracted data
-    manipulator.recreate_pdf("output_pdf", "recreated_pdf.pdf")
+    # # Recreate PDF from extracted data
+    # manipulator.recreate_pdf("output_pdf", "recreated_pdf.pdf")
+
+    # Translate all text in the file to English and append the translated text under the original text in slides.
+    input_pptx_path = "Networking.pptx"
+    output_pptx_path = "modified_example.pptx"
+    manipulator.change_text_in_pptx(input_pptx_path, output_pptx_path) 
